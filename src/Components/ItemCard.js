@@ -1,13 +1,15 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 
+import SetBgCar from '../Functions/SetBgCar';
+
 export default function ItemCard(props) {
     const { urlImage, carName, carDescription, carCategory } = props;
     return (
-        <Card style={{ width: "20%" }}>
-            <Card.Img variant="top" src={urlImage} />
+        <Card className="text-center" style={{ height: '420px', backgroundColor: SetBgCar(carCategory) }}>
+            <Card.Img variant="top" src={urlImage} style={{ height: '220px' }} />
             <Card.Body>
-                <Card.Title>{carName}</Card.Title>
+                <Card.Title><b>{carName}</b></Card.Title>
                 <Card.Text>
                     {carDescription}
                 </Card.Text>
